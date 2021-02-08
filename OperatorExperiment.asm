@@ -30,7 +30,55 @@ global _start
 _start:
 
 ; bAns1 = bNum1 + bNum2
-mov al, bNum1
-mov bl, bNum2
-; currently working on setting bAns1 = bNum1 + bNum2
+mov al, byte [bNum1]
+mov bl, byte [bNum2]
+add byte [bAns1], al
+add byte [bAns1], bl
+; zero out the registers for more operations
+xor al, al
+xor bl, bl
 
+; bAns2 = bNum1 + bNum3
+mov al, byte [bNum1]
+mov bl, byte [bNum2]
+add byte [bAns2], al
+add byte [bAns2], bl
+; zero out the registers for more operations
+xor al, al
+xor bl, bl
+
+; bAns3 = bNum3 + bNum4
+mov al, byte [bNum3]
+mov bl, byte [bNum4]
+add byte [bAns3], al
+add byte [bAns3], bl
+; zero out the registers for more operations
+xor al, al
+xor bl, bl
+
+; bAns4 = bNum1 - bNum2
+mov al, byte [bNum1]
+mov bl, byte [bNum2]
+add byte [bAns4], al
+sub byte [bAns4], bl
+; zero out the registers for more operations
+xor al, al
+xor bl, bl
+
+; bAns5 = bNum1 - bNum3
+mov al, byte [bNum1]
+mov bl, byte [bNum2]
+add byte [bAns5], al
+sub byte [bAns5], bl
+; zero out the registers for more operations
+xor al, al
+xor bl, bl
+
+; bAns6 = bNum2 - bNum4 
+mov al, byte [bNum2]
+mov byte [bAns6], al
+sub byte [bAns6], byte [bNum4]
+; zero out the registers for more operations
+xor al, al
+
+; bAns7 = bNum1 / bNum2
