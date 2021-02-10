@@ -12,9 +12,8 @@ bAns6 db 0
 bAns7 db 0
 bAns8 db 0
 bAns9 db 0
-bAns10 db 0
-bAns11 db 0
-bAns12 db 0
+
+bRem1 db 0
 
 wAns1 dw 0
 wAns2 dw 0
@@ -24,6 +23,8 @@ bNum1 db 32
 bNum2 db 16 
 bNum3 db 8 
 bNum4 db 4 
+
+wNum dw 34
 
 section .text
 global _start
@@ -82,3 +83,16 @@ sub byte [bAns6], byte [bNum4]
 xor al, al
 
 ; bAns7 = bNum1 / bNum2
+mov ax, byte [bNum1]
+div byte [bNum2]
+mov byte [bAns7], al
+; zero out the registers for more operations
+xor al, al
+
+; bAns8 = bNum3 / bNum4
+mov ax, byte [bNum3]
+div byte [bNum2]
+mov byte [bAns8], al
+; zero out the registers for more operations
+xor al, al
+
