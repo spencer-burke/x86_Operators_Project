@@ -94,5 +94,13 @@ mov ax, byte [bNum3]
 div byte [bNum2]
 mov byte [bAns8], al
 ; zero out the registers for more operations
-xor al, al
+xor ax, ax
+
+; bAns9 = wNum1 / bNum4
+mov ax, word [wNum1]
+div byte [bNum4]
+mov byte [bAns9], al
+mov byte [bRem1], ah
+; zero out the registers for more operations
+xor ax, ax
 
