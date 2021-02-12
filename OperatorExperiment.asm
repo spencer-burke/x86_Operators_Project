@@ -97,10 +97,11 @@ mov byte [bAns8], al
 xor ax, ax
 
 ; bAns9 = wNum1 / bNum4
+; bRem1 = wNum1 % bNum4
 mov ax, word [wNum1]
 div byte [bNum4]
-mov byte [bAns9], al
-mov byte [bRem1], ah
+mov byte [bAns9], ax 
+mov byte [bRem1], dx 
 ; zero out the registers for more operations
 xor ax, ax
 
