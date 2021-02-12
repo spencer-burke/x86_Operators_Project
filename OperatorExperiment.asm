@@ -41,7 +41,7 @@ xor bl, bl
 
 ; bAns2 = bNum1 + bNum3
 mov al, byte [bNum1]
-mov bl, byte [bNum2]
+mov bl, byte [bNum3]
 add byte [bAns2], al
 add byte [bAns2], bl
 ; zero out the registers for more operations
@@ -68,7 +68,7 @@ xor bl, bl
 
 ; bAns5 = bNum1 - bNum3
 mov al, byte [bNum1]
-mov bl, byte [bNum2]
+mov bl, byte [bNum3]
 add byte [bAns5], al
 sub byte [bAns5], bl
 ; zero out the registers for more operations
@@ -77,20 +77,20 @@ xor bl, bl
 
 ; bAns6 = bNum2 - bNum4 
 mov al, byte [bNum2]
-mov byte [bAns6], al
-sub byte [bAns6], byte [bNum4]
+sub al, byte [bNum4]
+mov byte[bAns6], al
 ; zero out the registers for more operations
 xor al, al
 
 ; bAns7 = bNum1 / bNum2
-mov ax, byte [bNum1]
+movzx ax, byte [bNum1]
 div byte [bNum2]
 mov byte [bAns7], al
 ; zero out the registers for more operations
 xor al, al
 
 ; bAns8 = bNum3 / bNum4
-mov ax, byte [bNum3]
+movzx ax, byte [bNum3]
 div byte [bNum2]
 mov byte [bAns8], al
 ; zero out the registers for more operations
@@ -98,10 +98,15 @@ xor ax, ax
 
 ; bAns9 = wNum1 / bNum4
 ; bRem1 = wNum1 % bNum4
-mov ax, word [wNum1]
+mov ax, word [wNum]
 div byte [bNum4]
-mov byte [bAns9], ax 
-mov byte [bRem1], dx 
+mov byte [bAns9], al 
+mov byte [bRem1], ah 
 ; zero out the registers for more operations
 xor ax, ax
+
+last:    
+    mov     rax, SYS_exit       ; Call code for exit    
+    mov     rdi, SUCCESS   ; Exit program with success    
+    syscall
 
