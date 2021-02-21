@@ -31,6 +31,12 @@ echo Variable bAns9:\n
 x/db &bAns9
 echo Variable bRem1:\n
 x/db &bAns9
+echo Variable wAns1:\n
+x/dw &wAns1
+echo Variable wAns2:\n
+x/dw &wAns2
+echo Variable wAns3:\n
+x/dw &wAns3
 echo \n 
 set logging off
 quit

@@ -105,32 +105,35 @@ mov byte [bRem1], ah
 ; zero out the registers for more operations
 xor ax, ax
 
-;wAns1 = bNum1 *bNum3
-movzx ax, byte [bNum1]
-movzx bx, byte [bNum3]
-mul bx
-mov word [wAns1], ax
-; zero out the registers for more operations
-xor ax, ax
-xor bx, bx
+calculate_wAns1:
+    ;wAns1 = bNum1 *bNum3
+    movzx ax, byte [bNum1]
+    movzx bx, byte [bNum3]
+    mul bx
+    mov word [wAns1], ax
+    ; zero out the registers for more operations
+    xor ax, ax
+    xor bx, bx
 
-;wAns2 = bNum2 * bNum2
-movzx ax, byte [bNum2]
-movzx bx, byte [bNum2]
-mul bx
-mov word [wAns2], ax
-; zero out the registers for more operations
-xor ax, ax
-xor bx, bx
+calculate_wAns2:
+    ;wAns2 = bNum2 * bNum2
+    movzx ax, byte [bNum2]
+    movzx bx, byte [bNum2]
+    mul bx
+    mov word [wAns2], ax
+    ; zero out the registers for more operations
+    xor ax, ax
+    xor bx, bx
 
-;wAns3 = bNum2 * bNum4
-movzx ax, byte [bNum2]
-movzx bx, byte [bNum4]
-mul bx
-mov word [wAns3], ax
-; zero out the registers for more operations
-xor ax, ax
-xor bx, bx
+calculate_wAns3:
+    ;wAns3 = bNum2 * bNum4
+    movzx ax, byte [bNum2]
+    movzx bx, byte [bNum4]
+    mul bx
+    mov word [wAns3], ax
+    ; zero out the registers for more operations
+    xor ax, ax
+    xor bx, bx
 
 last:    
     ; Call code for exit
