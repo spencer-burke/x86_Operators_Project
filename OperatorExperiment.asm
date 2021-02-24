@@ -90,8 +90,8 @@ mov byte [bAns7], al
 xor al, al
 
 ; bAns8 = bNum3 / bNum4
-movzx ax, byte [bNum3]
-div byte [bNum2]
+mov al, byte [bNum3]
+div byte [bNum4]
 mov byte [bAns8], al
 ; zero out the registers for more operations
 xor ax, ax
