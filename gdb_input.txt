@@ -30,7 +30,7 @@ x/db &bAns8
 echo Variable bAns9:\n
 x/db &bAns9
 echo Variable bRem1:\n
-x/db &bAns9
+x/db &bRem1
 echo Variable wAns1:\n
 x/dw &wAns1
 echo Variable wAns2:\n
