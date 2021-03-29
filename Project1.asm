@@ -41,8 +41,40 @@ section .text
 global _start
 _start:
 ; bAns1 = bNum1 + bNum2
+mov al, byte [bNum1]
+add al, byte [bNum2]
+mov byte [bAns1], al
+; zero out the registers
+xor al al
 
-last:    
+; bAns2 = bNum1 + bNum3
+mov al, byte [bNum1]
+add al, byte [bNum3]
+mov byte [bAns2], al
+; zero out the registers
+xor al al
+
+; bAns3 = bNum3 + bNum4
+mov al, byte [bNum3]
+add al, byte [bNum4]
+mov byte [bAns3], al
+; zero out the registers
+xor al al
+
+; bAns6 = bNum1 - bNum2
+mov al, byte [bNum1]
+sub al, byte [bNum2]
+mov byte[bAns6], al
+; zero out the registers
+xor al al
+
+; bAns7 = bNum1 - bNum3
+mov al, byte [bNum1]
+sub al, byte [bNum3]
+mov byte [bAns7], al 
+; zero out the registers
+xor al al
+last:   
     ; Call code for exit
     mov     rax, SYS_exit 
     ; Exit program with success
