@@ -74,6 +74,14 @@ sub al, byte [bNum3]
 mov byte [bAns7], al 
 ; zero out the registers
 xor al al
+
+; bAns8 = bNum2 - bNum4
+mov al, byte [bNum2]
+sub al, byte [bNum4]
+mov byte [bAns8], al
+; zero out the registers
+xor al al
+
 last:   
     ; Call code for exit
     mov     rax, SYS_exit 
