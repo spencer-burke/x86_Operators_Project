@@ -125,7 +125,15 @@ xor al al
 xor ax, ax
 
 ; bAns18 = wNum1 / bNum4
-mov ax, 0
+mov ax, word [wNum1]
+mov dx, 0 
+movzx bx, byte [bNum4]
+div bx
+mov byte [bAns18], al
+; zero out the registers
+xor al al
+xor ax, ax
+xor dx, dx
 
 last:   
     ; Call code for exit
