@@ -37,6 +37,8 @@ bNum2 db 16
 bNum3 db 8
 bNum4 db 4
 
+wNum1 db 37
+
 section .text
 global _start
 _start:
@@ -125,11 +127,13 @@ xor al al
 xor ax, ax
 
 ; bAns18 = wNum1 / bNum4
+; bRem18 = wNum1 % bNum4
 mov ax, word [wNum1]
 mov dx, 0 
 movzx bx, byte [bNum4]
 div bx
 mov byte [bAns18], al
+mov byte [bRem18], dl
 ; zero out the registers
 xor al al
 xor ax, ax
