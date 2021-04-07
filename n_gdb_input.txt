@@ -1,0 +1,51 @@
+#------------------------------------
+#  Debugger Input Script
+#------------------------------------
+echo \n\n
+break last
+run
+set pagination off
+set logging file n_gdb_out.txt
+set logging overwrite
+set logging on
+echo ------------------------------------ \n
+echo display variables \n
+echo \n
+echo Variable bAns1:\n
+i r &bAns1
+echo Variable bAns2:\n
+i r &bAns2
+echo Variable bAns3:\n
+i r &bAns3
+echo Variable bAns4:\n
+i r &bAns4
+echo Variable bAns5:\n
+i r &bAns5
+echo Variable bAns6:\n
+i r &bAns6
+echo Variable bAns7:\n
+i r &bAns7
+echo Variable bAns8:\n
+i r &bAns8
+echo Variable wAns11:\n
+i r &wAns11
+echo Variable wAns12:\n
+i r &wAns12
+echo Variable wAns13:\n
+i r &wAns13
+echo Variable wAns16:\n
+i r &wAns16
+echo Variable wAns17:\n
+i r &wAns17
+echo Variable bRem1:\n
+x/db &bRem1
+echo Variable wAns1:\n
+x/dw &wAns1
+echo Variable wAns2:\n
+x/dw &wAns2
+echo Variable wAns3:\n
+x/dw &wAns3
+echo \n 
+set logging off
+quit
+
