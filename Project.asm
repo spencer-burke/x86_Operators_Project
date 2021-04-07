@@ -23,9 +23,9 @@ bAns6 db 0
 bAns7 db 0
 bAns8 db 0
 
-wAns1 dw 0
-wAns2 dw 0
-wAns3 dw 0
+wAns11 dw 0
+wAns12 dw 0
+wAns13 dw 0
 
 bAns16 db 0
 bAns17 db 0
@@ -47,49 +47,49 @@ mov al, byte [bNum1]
 add al, byte [bNum2]
 mov byte [bAns1], al
 ; zero out the registers
-xor al al
+xor al, al
 
 ; bAns2 = bNum1 + bNum3
 mov al, byte [bNum1]
 add al, byte [bNum3]
 mov byte [bAns2], al
 ; zero out the registers
-xor al al
+xor al, al
 
 ; bAns3 = bNum3 + bNum4
 mov al, byte [bNum3]
 add al, byte [bNum4]
 mov byte [bAns3], al
 ; zero out the registers
-xor al al
+xor al, al
 
 ; bAns6 = bNum1 - bNum2
 mov al, byte [bNum1]
 sub al, byte [bNum2]
 mov byte[bAns6], al
 ; zero out the registers
-xor al al
+xor al, al
 
 ; bAns7 = bNum1 - bNum3
 mov al, byte [bNum1]
 sub al, byte [bNum3]
 mov byte [bAns7], al 
 ; zero out the registers
-xor al al
+xor al, al
 
 ; bAns8 = bNum2 - bNum4
 mov al, byte [bNum2]
 sub al, byte [bNum4]
 mov byte [bAns8], al
 ; zero out the registers
-xor al al
+xor al, al
 
 ; wAns11 = bNum1 * bNum3
 mov al, byte [bNum1]
 mul byte [bNum3]
 mov word [wAns11], ax
 ; zero out the registers
-xor al al
+xor al, al
 xor ax, ax
 
 ; wAns12 = bNum2 * bNum2
@@ -97,7 +97,7 @@ mov al, byte [bNum2]
 mul al
 mov word [wAns12], ax
 ; zero out the registers
-xor al al
+xor al, al
 xor ax, ax
 
 ; wAns13 = bNum2 * bNum4
@@ -105,7 +105,7 @@ mov al, byte [bNum2]
 mul byte [bNum4]
 mov word [wAns13], ax
 ; zero out the registers
-xor al al
+xor al, al
 xor ax, ax
 
 ; bAns16 = bNum1 / bNum2
@@ -114,7 +114,7 @@ mov al, byte [bNum1]
 div byte [bNum2]
 mov byte [bAns16], al
 ; zero out the registers
-xor al al
+xor al, al
 xor ax, ax
 
 ; bAns17 = bNum3 / bNum4
@@ -123,7 +123,7 @@ mov al, byte [bNum3]
 div byte [bNum4]
 mov byte [bAns17], al
 ; zero out the registers
-xor al al
+xor al, al
 xor ax, ax
 
 ; bAns18 = wNum1 / bNum4
@@ -135,7 +135,7 @@ div bx
 mov byte [bAns18], al
 mov byte [bRem18], dl
 ; zero out the registers
-xor al al
+xor al, al
 xor ax, ax
 xor dx, dx
 

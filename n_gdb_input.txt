@@ -2,7 +2,7 @@
 #  Debugger Input Script
 #------------------------------------
 echo \n\n
-break last
+break *last
 run
 set pagination off
 set logging file n_gdb_out.txt
@@ -12,40 +12,33 @@ echo ------------------------------------ \n
 echo display variables \n
 echo \n
 echo Variable bAns1:\n
-i r &bAns1
+x/db &bAns1
 echo Variable bAns2:\n
-i r &bAns2
+x/db &bAns2
 echo Variable bAns3:\n
-i r &bAns3
-echo Variable bAns4:\n
-i r &bAns4
-echo Variable bAns5:\n
-i r &bAns5
+x/db &bAns3
 echo Variable bAns6:\n
-i r &bAns6
+x/db &bAns6
 echo Variable bAns7:\n
-i r &bAns7
+x/db &bAns7
 echo Variable bAns8:\n
-i r &bAns8
+x/db &bAns8
 echo Variable wAns11:\n
-i r &wAns11
+x/db &wAns11
 echo Variable wAns12:\n
-i r &wAns12
+x/db &wAns12
 echo Variable wAns13:\n
-i r &wAns13
-echo Variable wAns16:\n
-i r &wAns16
-echo Variable wAns17:\n
-i r &wAns17
-echo Variable bRem1:\n
-x/db &bRem1
-echo Variable wAns1:\n
-x/dw &wAns1
-echo Variable wAns2:\n
-x/dw &wAns2
-echo Variable wAns3:\n
-x/dw &wAns3
+x/db &wAns13
+echo Variable bAns16:\n
+x/db &bAns16
+echo Variable bAns17:\n
+x/db &bAns17
+echo Variable bAns18:\n
+x/db &bAns18
+echo Variable bRem18:\n
+x/db &bRem18
 echo \n 
+echo \n
 set logging off
 quit
 
