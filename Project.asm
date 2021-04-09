@@ -32,12 +32,12 @@ bAns17 db 0
 bAns18 db 0
 bRem18 db 0
 
-bNum1 db 32
-bNum2 db 16
-bNum3 db 8
-bNum4 db 4
+bNum1 db 16
+bNum2 db 8
+bNum3 db 4
+bNum4 db 2
 
-wNum1 db 37
+wNum1 db 17
 
 section .text
 global _start
@@ -87,22 +87,18 @@ xor al, al
 ; wAns11 = bNum1 * bNum3
 mov al, byte [bNum1]
 mul byte [bNum3]
-movzx bx, al
-mov word [wAns11], bx
+mov word [wAns11], ax
 ; zero out the registers
 xor al, al
 xor ax, ax
-xor bx, bx
 
 ; wAns12 = bNum2 * bNum2
 mov al, byte [bNum2]
 mul al
-movzx bx, al
-mov word [wAns12], bx 
+mov word [wAns12], ax
 ; zero out the registers
 xor al, al
 xor ax, ax
-xor bx, bx
 
 ; wAns13 = bNum2 * bNum4
 mov al, byte [bNum2]
