@@ -87,18 +87,22 @@ xor al, al
 ; wAns11 = bNum1 * bNum3
 mov al, byte [bNum1]
 mul byte [bNum3]
-mov word [wAns11], ax
+movzx bx, al
+mov word [wAns11], bx
 ; zero out the registers
 xor al, al
 xor ax, ax
+xor bx, bx
 
 ; wAns12 = bNum2 * bNum2
 mov al, byte [bNum2]
 mul al
-mov word [wAns12], ax
+movzx bx, al
+mov word [wAns12], bx 
 ; zero out the registers
 xor al, al
 xor ax, ax
+xor bx, bx
 
 ; wAns13 = bNum2 * bNum4
 mov al, byte [bNum2]
